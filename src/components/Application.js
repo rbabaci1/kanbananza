@@ -6,10 +6,12 @@ import ListsContainer from '../containers/ListsContainer';
 
 const Application = () => {
   return (
-    <main className="Application">
+    <main className='Application'>
       <Users />
+
       <section>
         <CreateList />
+
         <ListsContainer />
       </section>
     </main>
