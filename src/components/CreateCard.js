@@ -25,10 +25,10 @@ class CreateCard extends Component {
 
     if (this.isInvalid) return;
 
-    const { onCreateCard } = this.props;
+    const { createCard, listId } = this.props;
 
-    if (onCreateCard) {
-      onCreateCard(this.state);
+    if (createCard) {
+      createCard(listId, this.state);
     }
 
     this.setState({
@@ -41,32 +41,33 @@ class CreateCard extends Component {
     const { title, description } = this.state;
 
     return (
-      <form className="CreateCard" onSubmit={this.handleSubmit}>
+      <form className='CreateCard' onSubmit={this.handleSubmit}>
         <input
-          className="CreateCard-title"
+          className='CreateCard-title'
           onChange={this.handleChange}
-          name="title"
-          placeholder="Title"
-          type="text"
+          name='title'
+          placeholder='Title'
+          type='text'
           value={title}
         />
         <input
-          className="CreateCard-description"
+          className='CreateCard-description'
           onChange={this.handleChange}
-          placeholder="Description"
-          name="description"
-          type="text"
+          placeholder='Description'
+          name='description'
+          type='text'
           value={description}
         />
         <input
-          className="CreateCard-submit"
-          type="submit"
-          value="Create New Card"
+          className='CreateCard-submit'
+          type='submit'
+          value='Create New Card'
           disabled={this.isInvalid}
         />
       </form>
     );
   }
+  i;
 }
 
 export default CreateCard;
